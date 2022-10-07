@@ -22,9 +22,14 @@ export const AuthProvider = ({ children }) => {
     return auth.createUserWithEmailAndPassword(email, password);
   };
 
+  const login = (email, password) => {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+
   const value = {
     currentUser,
     signUp,
+    login
   };
 
   return (

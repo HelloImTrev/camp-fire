@@ -9,6 +9,7 @@ import {
 import LoadingButton from "@mui/lab/LoadingButton";
 import React, { useEffect, useRef, useState } from "react";
 import { useAuth } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 export const SignUp = () => {
   const emailRef = useRef();
@@ -66,10 +67,14 @@ export const SignUp = () => {
   };
 
   return (
-    <Card sx={{ width: "450px" }}>
-      <CardContent sx={{ textAlign: "center" }}>
-        <Box component="div" sx={{ display: "flex", flexDirection: "column" }}>
-          <h1>Sign up</h1>
+    <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+      <Card sx={{ width: "450px" }}>
+        <CardContent sx={{ textAlign: "center" }}>
+          <Box
+            component="div"
+            sx={{ display: "flex", flexDirection: "column" }}
+          >
+            <h1>Sign up</h1>
             <TextField
               name="email"
               className="signup-field"
@@ -108,15 +113,20 @@ export const SignUp = () => {
                     Submit
                   </LoadingButton>
                 ) : (
-                  <Button disabled>Create Account</Button>
+                  <Button variant="contained" disabled>
+                    Create Account
+                  </Button>
                 )}
               </>
             )}
-        </Box>
-        <Box>
-          <Typography>Already have an account? Sign in</Typography>
-        </Box>
-      </CardContent>
-    </Card>
+          </Box>
+        </CardContent>
+      </Card>
+      <Box sx={{marginTop:"1rem"}}>
+        <Typography>
+          Already have an account? <Link to="/login">Sign in</Link>
+        </Typography>
+      </Box>
+    </Box>
   );
 };
