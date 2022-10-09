@@ -90,7 +90,11 @@ export const Login = () => {
       </Card>
       <Box>
         <Typography sx={{ marginTop: "1rem" }}>
-          Don't have an account? <Link to="/signup">Sign up</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" style={{ textDecoration: "underline" }}>
+            Sign up
+          </Link>{" "}
+           | <Link style={{ textDecoration: "underline" }}>Forgot Password</Link>
         </Typography>
       </Box>
     </Box>

@@ -22,14 +22,31 @@ export const AuthProvider = ({ children }) => {
     return auth.createUserWithEmailAndPassword(email, password);
   };
 
+  const setDisplayName = (firstName, lastName) => {
+    return auth.currentUser.updateProfile({
+      displayName: `${firstName} ${lastName}`
+    })
+  };
+
   const login = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password);
+  };
+
+  const changePassword = (password) => {
+    return auth.currentUser.updatePassword(password);
   }
+
+  const logout = () => {
+    return auth.signOut();
+  };
 
   const value = {
     currentUser,
     signUp,
-    login
+    login,
+    logout,
+    setDisplayName,
+    changePassword
   };
 
   return (
