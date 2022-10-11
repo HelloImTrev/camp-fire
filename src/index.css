@@ -16,6 +16,15 @@ a {
   align-items: center;
   width: 100%;
   height: 55px;
-  background-color: #659DBD;
+  background-color:#b9d9e8;
+  box-shadow: 0 1px 2px rgb(167, 167, 167);
+}
 
+.title-box {
+  background: linear-gradient(to right,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(255, 255, 255, 1) 10%,
+  rgba(255, 255, 255, 1) 90%,
+  rgba(255, 255, 255, 0) 100%
+  );
 }

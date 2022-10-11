@@ -102,7 +102,6 @@ export const SignUp = () => {
               variant="outlined"
               type="text"
               onChange={handleChange}
-              
             />
             <TextField
               name="lastName"
@@ -131,7 +130,12 @@ export const SignUp = () => {
               ref={passwordConfrimRef}
             />
             {accountInfo.passwordsMatch ? (
-              <Button type="button" variant="contained" onClick={handleClick}>
+              <Button
+                type="button"
+                variant="contained"
+                disableElevation={true}
+                onClick={handleClick}
+              >
                 Create Account
               </Button>
             ) : (
@@ -152,7 +156,10 @@ export const SignUp = () => {
       </Card>
       <Box sx={{ marginTop: "1rem" }}>
         <Typography>
-          Already have an account? <Link to="/login" style={{textDecoration:"underline"}}>Sign in</Link>
+          Already have an account?{" "}
+          <Link to="/login" style={{ textDecoration: "underline" }}>
+            Sign in
+          </Link>
         </Typography>
       </Box>
     </Box>

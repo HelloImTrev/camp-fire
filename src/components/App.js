@@ -9,6 +9,7 @@ import { SignUp } from "./SignUp";
 import { Home } from "./Home";
 import { ManageProfile } from "./ManageProfile";
 import { PrivateRoute } from "./PrivateRoute";
+import { CenteredContainer } from "./CenteredContainer";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-         
+
           {/* Private Routes */}
           <Route
             path="/dashboard"
